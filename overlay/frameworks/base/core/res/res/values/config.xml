@@ -34,24 +34,32 @@
         <item>4</item>
         <item>5</item>
         <item>6</item>
-        <item>8</item>
+        <item>9</item>
         <item>13</item>
         <item>17</item>
         <item>21</item>
         <item>26</item>
         <item>30</item>
-        <item>34</item>
-        <item>140</item>
-        <item>310</item>
+        <item>40</item>
+        <item>83</item>
+        <item>104</item>
+        <item>200</item>
         <item>400</item>
         <item>500</item>
         <item>600</item>
+        <item>700</item>
+        <item>800</item>
         <item>1000</item>
         <item>1200</item>
         <item>1500</item>
+        <item>1800</item>
+        <item>2000</item>
+        <item>2165</item>
+        <item>2680</item>
         <item>3000</item>
-        <item>3500</item>
+        <item>3540</item>
         <item>4000</item>
+        <item>12000</item>        
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -65,26 +73,42 @@
         <item>3</item>
         <item>3</item>
         <item>5</item>
-        <item>5</item>
-        <item>12</item>
-        <item>12</item>
+        <item>8</item>
+        <item>15</item>
         <item>20</item>
-        <item>20</item>
-        <item>39</item>
-        <item>39</item>
-        <item>43</item>
-        <item>43</item>
-        <item>55</item>
-        <item>55</item>
-        <item>63</item>
-        <item>63</item>
-        <item>84</item>
-        <item>93</item>
-        <item>105</item>
+        <item>26</item>
+        <item>35</item>
+        <item>45</item>
+        <item>46</item>
+        <item>46</item>
+        <item>46</item>
+        <item>60</item>
+        <item>60</item>
+        <item>60</item>
+        <item>64</item>
+        <item>66</item>
+        <item>70</item>
+        <item>73</item>
+        <item>80</item>
+        <item>88</item>
+        <item>110</item>
+        <item>130</item>
+        <item>135</item>
+        <item>145</item>
+        <item>180</item>
         <item>200</item>
+        <item>225</item>        
         <item>240</item>
         <item>255</item>
     </integer-array>
+
+    <!-- Stability requirements in milliseconds for accepting a new brightness level.  This is used
+         for debouncing the light sensor.  Different constants are used to debounce the light sensor
+         when adapting to brighter or darker environments.  This parameter controls how quickly
+         brightness changes occur in response to an observed change in light level that exceeds the
+         hysteresis threshold. -->
+    <integer name="config_autoBrightnessBrighteningLightDebounce">2000</integer>
+    <integer name="config_autoBrightnessDarkeningLightDebounce">4000</integer>
 
     <!-- Indicate whether to allow the device to suspend when the screen is off
          due to the proximity sensor.  This resource should only be set to true
@@ -92,4 +116,26 @@
          Otherwise, the device may fail to wake out of suspend reliably.
          The default is false. -->
     <bool name="config_suspendWhenScreenOffDueToProximity">true</bool>
+
+    <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
+    <bool name="config_swipe_up_gesture_setting_available">true</bool>
+
+    <!-- Button backlight -->
+    <bool name="config_deviceHasVariableButtonBrightness">true</bool>
+
+    <!-- Button brightness support -->
+    <bool name="config_button_brightness_support">true</bool>
+    <integer name="config_button_brightness_default">128</integer>
+
+    <!-- Hardware 'face' keys present on the device, stored as a bit field.
+         This integer should equal the sum of the corresponding value for each
+         of the following keys present:
+             1 - Home
+             2 - Back
+             4 - Menu
+             8 - Assistant (search)
+            16 - App switch
+         For example, a device with Home, Back and Menu keys would set this
+         config to 7. -->
+    <integer name="config_deviceHardwareKeys">19</integer>
 </resources>
